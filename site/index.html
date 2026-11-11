@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FERRET: SEC filings, matched to stock tokens on Robinhood Chain</title>
+  <meta name="description" content="FERRET reads fund portfolios and insider trades in SEC filings and shows which of them exist as stock tokens on Robinhood Chain.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FERRET">
+  <meta property="og:title" content="FERRET: SEC filings, matched to stock tokens on Robinhood Chain">
+  <meta property="og:description" content="FERRET reads fund portfolios and insider trades in SEC filings and shows which of them exist as stock tokens on Robinhood Chain.">
+  <meta property="og:url" content="https://ferretcheck.com/">
+  <meta property="og:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FERRET: SEC filings, matched to stock tokens on Robinhood Chain">
+  <meta name="twitter:description" content="FERRET reads fund portfolios and insider trades in SEC filings and shows which of them exist as stock tokens on Robinhood Chain.">
+  <meta name="twitter:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <a class="brand" href="./"><img src="logo.png" alt="" width="44" height="44"><span>FERRET</span></a>
+      <nav>
+        <a href="./" aria-current="page"><i>01</i>Front page</a>
+        <a href="insiders.html"><i>02</i>Insider trades</a>
+        <a href="funds.html"><i>03</i>Fund books</a>
+        <a href="wallet.html"><i>04</i>Wallet check</a>
+        <a href="token.html"><i>05</i>$FERRET</a>
+        <a href="how.html"><i>06</i>How it works</a>
+      </nav>
+      <div class="rail-foot">
+        <div class="rail-ca" id="rail-ca"></div>
+        <div class="rail-links" id="rail-links"></div>
+      </div>
+    </aside>
+    <main>
+    <section class="hero">
+      <p class="kicker">SEC filings &rarr; stock tokens on Robinhood Chain</p>
+      <h1>Nobody reads the filings. <span class="circled">The ferret does.</span></h1>
+      <p class="lede">FERRET goes down into SEC paperwork, the fund portfolios and the insider trades, and comes back with the ones you can hold as a stock token on Robinhood Chain.</p>
+      <div class="cta">
+        <a class="btn solid" href="insiders.html">What insiders bought</a>
+        <a class="btn" href="wallet.html">Check a wallet</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="head"><h2>Dug up lately</h2><p class="muted" id="updated"></p></div>
+      <ol class="printout" id="digs"><li><p class="muted">Digging…</p></li></ol>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section>
+      <div class="head"><h2>Where to look</h2></div>
+      <div class="doors">
+        <a href="insiders.html"><i>01</i><h3>Insider trades</h3><p>Executives buying and selling their own stock. Form 4, filed within two business days.</p></a>
+        <a href="funds.html"><i>02</i><h3>Fund books</h3><p>Berkshire, Ackman, Tepper, Cathie Wood and others, position by position, with the tokens marked.</p></a>
+        <a href="wallet.html"><i>03</i><h3>Wallet check</h3><p>Paste any address and see which fund it trades like. Read-only, nothing to sign.</p></a>
+        <a href="token.html"><i>04</i><h3>$FERRET</h3><p>Holders pick the next fund to track. The site itself stays free.</p></a>
+      </div>
+    </section>
+
+      <footer>
+        <p>FERRET is not affiliated with Robinhood, Pons, the SEC, or any fund or company shown. Data: SEC EDGAR, the Robinhood stock token registry and Robinhood Chain. Nothing here is investment advice.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="config.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>

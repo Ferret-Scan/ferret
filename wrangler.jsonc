@@ -1,0 +1,13 @@
+{
+  // Static site plus the /rpc route on Cloudflare. Deploy: npx wrangler deploy
+  // Secret (not here): npx wrangler secret put RH_RPC_URL   (keyed Robinhood Chain RPC)
+  "name": "ferret-site",
+  "main": "site-worker.js",
+  "compatibility_date": "2026-10-23",
+  "assets": { "directory": "./site", "binding": "ASSETS", "run_worker_first": ["/rpc", "/data/*"] },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "ferretcheck.com", "custom_domain": true },
+    { "pattern": "www.ferretcheck.com", "custom_domain": true }
+  ]
+}

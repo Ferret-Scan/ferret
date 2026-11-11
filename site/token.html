@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$FERRET token | FERRET</title>
+  <meta name="description" content="$FERRET launches on Pons on Robinhood Chain. Holders vote on which fund the site tracks next.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FERRET">
+  <meta property="og:title" content="$FERRET token | FERRET">
+  <meta property="og:description" content="$FERRET launches on Pons on Robinhood Chain. Holders vote on which fund the site tracks next.">
+  <meta property="og:url" content="https://ferretcheck.com/token.html">
+  <meta property="og:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$FERRET token | FERRET">
+  <meta name="twitter:description" content="$FERRET launches on Pons on Robinhood Chain. Holders vote on which fund the site tracks next.">
+  <meta name="twitter:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <a class="brand" href="./"><img src="logo.png" alt="" width="44" height="44"><span>FERRET</span></a>
+      <nav>
+        <a href="./"><i>01</i>Front page</a>
+        <a href="insiders.html"><i>02</i>Insider trades</a>
+        <a href="funds.html"><i>03</i>Fund books</a>
+        <a href="wallet.html"><i>04</i>Wallet check</a>
+        <a href="token.html" aria-current="page"><i>05</i>$FERRET</a>
+        <a href="how.html"><i>06</i>How it works</a>
+      </nav>
+      <div class="rail-foot">
+        <div class="rail-ca" id="rail-ca"></div>
+        <div class="rail-links" id="rail-links"></div>
+      </div>
+    </aside>
+    <main>
+    <section>
+      <p class="kicker" id="token-status"></p>
+      <h1 class="page-title">$<span class="ticker">FERRET</span></h1>
+      <div class="token-grid">
+        <div class="sheet pad">
+          <h3>Contract address</h3>
+          <div class="ca" id="ca"></div>
+          <div class="cta" id="token-links"></div>
+        </div>
+        <ul class="facts tall" id="tokenomics"></ul>
+      </div>
+    </section>
+    <section>
+      <div class="head"><h2>What holding it does</h2></div>
+      <div class="uses">
+        <article><span class="tag live">At launch</span><h3>Vote</h3><p>Holders choose which fund gets added next. A vote is a free signature, weighted by balance.</p></article>
+        <article><span class="tag live">At launch</span><h3>Buyback</h3><p>The creator share of Pons trading fees is set to buy $<span class="ticker">FERRET</span> off the market.</p></article>
+        <article><span class="tag">Later</span><h3>Alerts</h3><p>Insider buys and fund changes sent to holders in Telegram as they are filed.</p></article>
+        <article><span class="tag">Later</span><h3>Baskets</h3><p>A fund's on-chain book bought in one transaction, with a lower fee for holders.</p></article>
+      </div>
+      <p class="fine">Bought-back tokens sit in the Pons buyback vault, which releases them over five years. They are not burned. The "later" items are not built and may change. The token gives no claim on any asset or revenue, and the site is free without it.</p>
+    </section>
+    <section>
+      <div class="head"><h2>Which fund next?</h2><p class="muted" id="vote-status"></p></div>
+      <ul class="vote" id="vote-list"></ul>
+    </section>
+
+      <footer>
+        <p>FERRET is not affiliated with Robinhood, Pons, the SEC, or any fund or company shown. Data: SEC EDGAR, the Robinhood stock token registry and Robinhood Chain. Nothing here is investment advice.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="config.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>

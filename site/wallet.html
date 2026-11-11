@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Which fund does this wallet trade like? | FERRET</title>
+  <meta name="description" content="Paste any Robinhood Chain address and FERRET compares its stock tokens with the books of the big funds. Read-only.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FERRET">
+  <meta property="og:title" content="Which fund does this wallet trade like? | FERRET">
+  <meta property="og:description" content="Paste any Robinhood Chain address and FERRET compares its stock tokens with the books of the big funds. Read-only.">
+  <meta property="og:url" content="https://ferretcheck.com/wallet.html">
+  <meta property="og:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Which fund does this wallet trade like? | FERRET">
+  <meta name="twitter:description" content="Paste any Robinhood Chain address and FERRET compares its stock tokens with the books of the big funds. Read-only.">
+  <meta name="twitter:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <a class="brand" href="./"><img src="logo.png" alt="" width="44" height="44"><span>FERRET</span></a>
+      <nav>
+        <a href="./"><i>01</i>Front page</a>
+        <a href="insiders.html"><i>02</i>Insider trades</a>
+        <a href="funds.html"><i>03</i>Fund books</a>
+        <a href="wallet.html" aria-current="page"><i>04</i>Wallet check</a>
+        <a href="token.html"><i>05</i>$FERRET</a>
+        <a href="how.html"><i>06</i>How it works</a>
+      </nav>
+      <div class="rail-foot">
+        <div class="rail-ca" id="rail-ca"></div>
+        <div class="rail-links" id="rail-links"></div>
+      </div>
+    </aside>
+    <main>
+    <section>
+      <p class="kicker">Read-only</p>
+      <h1 class="page-title">Wallet check</h1>
+      <p class="lede">Paste any address. The ferret reads its stock token balances and tells you which fund it trades like. Nothing is signed and nothing is spent.</p>
+      <form class="wallet-form" id="wallet-form">
+        <input id="address" type="text" placeholder="0x address" spellcheck="false" autocomplete="off" aria-label="Wallet address">
+        <button type="submit" class="btn solid">Check</button>
+        <button type="button" class="btn" id="connect">Use my wallet</button>
+      </form>
+      <div id="score-result"></div>
+    </section>
+    <section>
+      <div class="head"><h2>How the score works</h2></div>
+      <ol class="steps">
+        <li><h3>Balances</h3><p>The page asks Robinhood Chain for the balance of every stock token in the official registry.</p></li>
+        <li><h3>Prices</h3><p>Each balance is valued with its Chainlink feed, or with the last filing price where there is no feed.</p></li>
+        <li><h3>Overlap</h3><p>The weights are compared with the on-chain part of every fund book. 100% means an exact copy.</p></li>
+      </ol>
+    </section>
+
+      <footer>
+        <p>FERRET is not affiliated with Robinhood, Pons, the SEC, or any fund or company shown. Data: SEC EDGAR, the Robinhood stock token registry and Robinhood Chain. Nothing here is investment advice.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="config.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>

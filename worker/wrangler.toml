@@ -1,0 +1,16 @@
+name = "ferret-vote"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Create the namespace with `npx wrangler kv namespace create VOTES` and paste its id here.
+[[kv_namespaces]]
+binding = "VOTES"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+# Must match vote.round and the candidate ids in ../site/config.js.
+ROUND = "1"
+CANDIDATES = "soros,tiger,thirdpoint,baupost,rentech,sa"
+RPC_URL = "https://rpc.mainnet.chain.robinhood.com"
+# Empty = one wallet, one vote. Set to the token contract after launch to weight by balance.
+TOKEN_ADDRESS = ""

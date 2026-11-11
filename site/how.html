@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How FERRET works</title>
+  <meta name="description" content="Where the FERRET data comes from, how fresh it is, what is planned, and answers to common questions.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FERRET">
+  <meta property="og:title" content="How FERRET works">
+  <meta property="og:description" content="Where the FERRET data comes from, how fresh it is, what is planned, and answers to common questions.">
+  <meta property="og:url" content="https://ferretcheck.com/how.html">
+  <meta property="og:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How FERRET works">
+  <meta name="twitter:description" content="Where the FERRET data comes from, how fresh it is, what is planned, and answers to common questions.">
+  <meta name="twitter:image" content="https://ferretcheck.com/og-image.png?v=3">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <a class="brand" href="./"><img src="logo.png" alt="" width="44" height="44"><span>FERRET</span></a>
+      <nav>
+        <a href="./"><i>01</i>Front page</a>
+        <a href="insiders.html"><i>02</i>Insider trades</a>
+        <a href="funds.html"><i>03</i>Fund books</a>
+        <a href="wallet.html"><i>04</i>Wallet check</a>
+        <a href="token.html"><i>05</i>$FERRET</a>
+        <a href="how.html" aria-current="page"><i>06</i>How it works</a>
+      </nav>
+      <div class="rail-foot">
+        <div class="rail-ca" id="rail-ca"></div>
+        <div class="rail-links" id="rail-links"></div>
+      </div>
+    </aside>
+    <main>
+    <section>
+      <p class="kicker">Method</p>
+      <h1 class="page-title">How it works</h1>
+      <p class="lede">Three public sources, joined by ticker. No account, no wallet connection needed to read anything.</p>
+      <ol class="steps">
+        <li><h3>Read the filing</h3><p>FERRET pulls 13F reports (what a fund holds) and Form 4 reports (what an insider traded) from SEC EDGAR.</p></li>
+        <li><h3>Find the token</h3><p>Each stock is looked up in Robinhood's official stock token registry. If a token exists, the row gets its address.</p></li>
+        <li><h3>Show the match</h3><p>You see the filing and the token side by side, with a link to the SEC document and to the token on the explorer.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="head"><h2>How fresh is it</h2></div>
+      <ul class="facts tall">
+        <li><span>Fund books</span>Funds file a 13F up to 45 days after the quarter ends. A book shows what the fund held then, not today.</li>
+        <li><span>Insider trades</span>Form 4 is due within two business days of the trade. The feed keeps trades over $25K.</li>
+        <li><span>Wallet balances</span>Read live from Robinhood Chain when you press Check.</li>
+        <li><span>Refresh</span>The filing data is rebuilt once a day.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="head"><h2>What comes next</h2></div>
+      <ol class="plan">
+        <li class="now"><span>Now</span><h3>Reading</h3><p>Fund books, insider trades, the wallet check, the $FERRET launch and the holder vote.</p></li>
+        <li><span>Next</span><h3>Acting</h3><p>Baskets that buy a fund's on-chain book in one transaction, and Telegram alerts for holders.</p></li>
+        <li><span>Later</span><h3>Explaining</h3><p>An AI reader for 8-K filings, and watchlists for the stocks you follow.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Do I need $FERRET to use the site?</summary><p>No. Everything on it is free. The token gives a vote on which fund is added next.</p></details>
+        <details><summary>Where does the data come from?</summary><p>SEC EDGAR for 13F and Form 4 filings, Robinhood's stock token registry for token addresses, and Robinhood Chain for balances and prices.</p></details>
+        <details><summary>Why are some holdings marked "no token"?</summary><p>That stock has no stock token on Robinhood Chain yet. It stays in the table so the book is complete.</p></details>
+        <details><summary>Who can buy stock tokens?</summary><p>Stock tokens are issued by Robinhood Assets (Jersey) Limited. They are not available to US persons or in several other places, including the UK and Canada.</p></details>
+        <details><summary>Is this investment advice?</summary><p>No. FERRET shows what public filings say. Copying a fund or an insider can lose money, and nothing here tells you to buy or sell.</p></details>
+      </div>
+    </section>
+
+      <footer>
+        <p>FERRET is not affiliated with Robinhood, Pons, the SEC, or any fund or company shown. Data: SEC EDGAR, the Robinhood stock token registry and Robinhood Chain. Nothing here is investment advice.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="config.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
