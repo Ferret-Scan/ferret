@@ -13,4 +13,4 @@ ROUND = "1"
 CANDIDATES = "soros,tiger,thirdpoint,baupost,rentech,sa"
 RPC_URL = "https://rpc.mainnet.chain.robinhood.com"
 # Empty = one wallet, one vote. Set to the token contract after launch to weight by balance.
-TOKEN_ADDRESS = ""
+TOKEN_ADDRESS = "0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6"

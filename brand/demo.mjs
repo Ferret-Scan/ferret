@@ -46,7 +46,9 @@ function marker(cx, cy, rx, ry, k) {
 const kicker = (text, o) => `<g opacity="${o}"><rect x="104" y="64" width="${text.length * 13.2 + 28}" height="36" fill="${INK}"/><text x="118" y="89" font-family="${MONO}" font-size="22" fill="${C}" letter-spacing="1">${text}</text></g>`;
 const chip = (x, y, text, w = 86) => `<rect x="${x}" y="${y - 22}" width="${w}" height="32" rx="5" fill="${WHITE}" stroke="${INK}" stroke-width="2.5"/><text x="${x + w / 2}" y="${y}" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="19" fill="${INK}">${text}</text>`;
 
-const S = { intro: [0, 3.2], form: [3.2, 10], book: [10, 16.2], wallet: [16.2, 20], end: [20, 23] };
+// CA=<token address> makes the launch cut: the end card carries the address and holds longer -> launch.mp4
+const CA = process.env.CA || '';
+const S = { intro: [0, 3.2], form: [3.2, 10], book: [10, 16.2], wallet: [16.2, 20], end: [20, CA ? 25.5 : 23] };
 const END = S.end[1];
 
 function frame(t) {
@@ -149,8 +151,16 @@ function frame(t) {
       <text x="110" y="300" font-family="${SLAB}" font-size="78" fill="${C}" letter-spacing="-2">The ferret</text>
       <text x="110" y="390" font-family="${SLAB}" font-size="78" fill="${C}" letter-spacing="-2">reads them.</text>
       ${marker(358, 362, 280, 54, span(t, S.end[0] + 0.6, S.end[0] + 1.2))}
+      ${CA ? `
+      <g opacity="${ease(span(t, S.end[0] + 1.3, S.end[0] + 1.8)).toFixed(2)}">
+        <text x="114" y="474" font-family="${SLAB}" font-size="34" fill="${C}">$FERRET is live on Pons</text>
+        <rect x="110" y="496" width="700" height="46" rx="5" fill="${C}"/>
+        <text x="126" y="527" font-family="${MONO}" font-weight="700" font-size="22" fill="${INK}">${CA}</text>
+        <text x="114" y="586" font-family="${MONO}" font-size="24" fill="${C}" letter-spacing="2">ferretcheck.com</text>
+        <text x="114" y="620" font-family="${MONO}" font-size="18" fill="${BAR}">Robinhood Chain. The address is on the site and on GitHub.</text>
+      </g>` : `
       <text x="114" y="490" font-family="${MONO}" font-size="30" fill="${C}" letter-spacing="2">ferretcheck.com</text>
-      <text x="114" y="532" font-family="${MONO}" font-size="20" fill="${BAR}">SEC filings, matched to stock tokens on Robinhood Chain</text></g>`;
+      <text x="114" y="532" font-family="${MONO}" font-size="20" fill="${BAR}">SEC filings, matched to stock tokens on Robinhood Chain</text>`}</g>`;
   }
   return s + '</svg>';
 }
@@ -164,7 +174,7 @@ const dir = join(tmpdir(), 'ferret-demo-frames');
 rmSync(dir, { recursive: true, force: true }); mkdirSync(dir, { recursive: true });
 const total = Math.round(END * FPS);
 for (let i = 0; i < total; i++) await sharp(Buffer.from(frame(i / FPS))).png().toFile(join(dir, `f${String(i).padStart(4, '0')}.png`));
-const out = fileURLToPath(new URL('./demo.mp4', import.meta.url));
+const out = fileURLToPath(new URL(CA ? './launch.mp4' : './demo.mp4', import.meta.url));
 execFileSync(process.env.FFMPEG || 'ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', join(dir, 'f%04d.png'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-movflags', '+faststart', out]);
 rmSync(dir, { recursive: true, force: true });
 console.log('wrote', out, total, 'frames');

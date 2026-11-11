@@ -11,7 +11,7 @@ If a stock has a token, the row shows it, with a link to the SEC document and to
 
 - Site: https://ferretcheck.com
 - X: https://x.com/ferretscan
-- $FERRET: not launched yet. It will launch on Pons on Robinhood Chain, and the address will be printed on the site.
+- $FERRET: [`0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6`](https://robinhoodchain.blockscout.com/token/0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6) on [Pons](https://ponsfamily.com/launchpad/0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6), Robinhood Chain (4663). Holders vote on which fund is tracked next.
 
 The site is free and needs no account, no wallet connection and no token.
 

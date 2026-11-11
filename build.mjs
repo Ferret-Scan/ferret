@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const SITE = (process.env.SITE_URL || 'https://ferret.example').replace(/\/$/, '');
-const V = 4; // bump to refresh cached css, js and the preview image
+const V = 5; // bump to refresh cached css, js and the preview image
 const out = path.join(path.dirname(fileURLToPath(import.meta.url)), 'site');
 
 const NAV = [
@@ -111,7 +111,7 @@ const pages = {
 
   token: {
     title: '$FERRET token | FERRET',
-    desc: '$FERRET launches on Pons on Robinhood Chain. Holders vote on which fund the site tracks next.',
+    desc: '$FERRET is live on Pons on Robinhood Chain. Holders vote on which fund the site tracks next.',
     body: `
     <section>
       <p class="kicker" id="token-status"></p>

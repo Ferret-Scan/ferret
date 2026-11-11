@@ -3,12 +3,12 @@ window.FERRET_CONFIG = {
   name: 'FERRET',
   ticker: 'FERRET',
   // Paste the token contract address after launching on Pons. Empty = "launching soon".
-  tokenAddress: '',
+  tokenAddress: '0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6',
   // Leave a link empty to hide its button.
   links: {
     x: 'https://x.com/ferretscan',
     telegram: '',
-    pons: '',
+    pons: 'https://ponsfamily.com/launchpad/0xbd863910d4718c3fcc9a534dfd37a36315dd5fa6',
     github: 'https://github.com/Ferret-Scan/ferret',
   },
   // Pons v2 launches mint a fixed 1,000,000,000.
