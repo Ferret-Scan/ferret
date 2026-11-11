@@ -9,7 +9,7 @@ window.FERRET_CONFIG = {
     x: 'https://x.com/ferretscan',
     telegram: '',
     pons: '',
-    github: '',
+    github: 'https://github.com/Ferret-Scan/ferret',
   },
   // Pons v2 launches mint a fixed 1,000,000,000.
   tokenomics: {
