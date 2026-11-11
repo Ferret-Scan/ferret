@@ -1,0 +1,34 @@
+# Rebuilds the portfolio and insider data from SEC filings and commits it.
+# The commit triggers a redeploy on the hosting side, so the site stays current on its own.
+name: Refresh data
+
+on:
+  schedule:
+    - cron: '0 11 * * *' # daily, shortly before the US market opens
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch filings
+        env:
+          # SEC requires a contact in the User-Agent, e.g. "Ferret filings tracker you@example.com"
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          node scripts/fetch-data.mjs
+          node scripts/fetch-insiders.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "ferret-bot"
+          git config user.email "ferret-bot@users.noreply.github.com"
+          git add site/data
+          git diff --cached --quiet || git commit -m "Refresh data"
+          git push
